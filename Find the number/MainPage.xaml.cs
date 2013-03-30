@@ -24,8 +24,7 @@ namespace Find_the_number
         private void Play_btn_Tap(object sender, GestureEventArgs e)
         {
             NavigationService.Navigate(new Uri("/GuessPage.xaml", UriKind.Relative));
-            Random randGen = new Random();
-            App.number = randGen.Next(1, 11);
+            
         }
     }
 }

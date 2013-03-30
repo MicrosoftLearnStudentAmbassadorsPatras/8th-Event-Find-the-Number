@@ -23,8 +23,7 @@ namespace Find_the_number
         /// <returns>The root frame of the Phone Application.</returns>
         public PhoneApplicationFrame RootFrame { get; private set; }
 
-        public static int number;
-        public static int lives = 3;
+        public static int score = 0;
 
         /// <summary>
         /// Constructor for the Application object.

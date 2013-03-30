@@ -61,9 +61,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="CheckPage.xaml.cs">
-      <DependentUpon>CheckPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="GuessPage.xaml.cs">
       <DependentUpon>GuessPage.xaml</DependentUpon>
     </Compile>
@@ -77,10 +74,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </ApplicationDefinition>
-    <Page Include="CheckPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="GuessPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
