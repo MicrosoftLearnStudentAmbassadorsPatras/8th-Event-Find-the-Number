@@ -54,9 +54,17 @@ namespace Find_the_number
 
         private void Check_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (Check_btn.Content.ToString() != "Check")
+            if (Check_btn.Content.ToString() == "Go for more")
             {
-                NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
+                Random randGen = new Random();
+                number = randGen.Next(1, 11);
+                Card.Source = new BitmapImage(new Uri("/Images/card.png", UriKind.RelativeOrAbsolute));
+                Check_btn.Content = "Check";
+
+            }
+            else if (Check_btn.Content.ToString() == "Try again")
+            {
+                NavigationService.Navigate(new Uri("/Submit.xaml", UriKind.Relative));
             }
             else
             {
@@ -75,12 +83,8 @@ namespace Find_the_number
                                 {
                                     result.Text = "Get out of here. You've lost!";
                                     showCard();
-                                    App.score = 0;
-                                    score.Text = App.score.ToString();
                                     Check_btn.Content = "Try again";
                                 }
-
-                                // add winning procedure
                             }
                             else
                             {
@@ -93,11 +97,8 @@ namespace Find_the_number
                                 {
                                     result.Text = "Get out of here. You've lost!";
                                     showCard();
-                                    App.score = 0;
-                                    score.Text = App.score.ToString();
                                     Check_btn.Content = "Try again";
                                 }
-                                // add lossing procedure
                             }
                         } break;
                     case "larger than":
@@ -113,8 +114,6 @@ namespace Find_the_number
                                 {
                                     result.Text = "Get out of here. You've lost!";
                                     showCard();
-                                    App.score = 0;
-                                    score.Text = App.score.ToString();
                                     Check_btn.Content = "Try again"; ;
                                 }
                             }
@@ -129,8 +128,6 @@ namespace Find_the_number
                                 {
                                     result.Text = "Get out of here. You've lost!";
                                     showCard();
-                                    App.score = 0;
-                                    score.Text = App.score.ToString();
                                     Check_btn.Content = "Try again";
                                 }
                             }
@@ -144,8 +141,6 @@ namespace Find_the_number
                                 Check_btn.Content = "Go for more";
                                 App.score++;
                                 score.Text = App.score.ToString();
-                                Random randGen = new Random();
-                                number = randGen.Next(1, 11);
                             }
                             else
                             {
@@ -158,8 +153,6 @@ namespace Find_the_number
                                 {
                                     result.Text = "Get out of here. You've lost!";
                                     showCard();
-                                    App.score = 0;
-                                    score.Text = App.score.ToString();
                                     Check_btn.Content = "Try again";
                                 }
                             }

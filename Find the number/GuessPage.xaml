@@ -34,7 +34,7 @@
             <TextBox x:Name="Number_box" HorizontalAlignment="Left" Height="67" Margin="303,615,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="76" FontSize="18" TextAlignment="Center" LostFocus="Number_box_LostFocus" InputScope="Digits"/>
             <Button x:Name="Check_btn" Content="Check" Margin="142,672,143,0" VerticalAlignment="Top" Height="73" FontSize="22" Click="Check_btn_Click"/>
             <TextBlock HorizontalAlignment="Left" Margin="376,-4,0,0" TextWrapping="Wrap" Text="Tries:" VerticalAlignment="Top"/>
-            <TextBlock x:Name="Tries_bx" HorizontalAlignment="Left" Margin="435,-4,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
+            <TextBlock x:Name="Tries_bx" HorizontalAlignment="Left" Margin="435,-4,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top"/>
             <TextBlock x:Name="result" HorizontalAlignment="Left" Margin="10,492,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="123" Width="436" FontSize="36" TextAlignment="Center"/>
             <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Score:" VerticalAlignment="Top"/>
             <TextBlock x:Name="score" HorizontalAlignment="Left" Margin="78,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" Height="27" Width="41"/>

@@ -1,5 +1,5 @@
 ﻿<phone:PhoneApplicationPage
-    x:Class="Find_the_number.Leaderboard"
+    x:Class="Find_the_number.Submit"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
@@ -12,9 +12,6 @@
     SupportedOrientations="Portrait" Orientation="Portrait"
     mc:Ignorable="d"
     shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded">
-    <phone:PhoneApplicationPage.Background>
-        <ImageBrush Stretch="Fill"/>
-    </phone:PhoneApplicationPage.Background>
 
     <!--LayoutRoot is the root grid where all page content is placed-->
     <Grid x:Name="LayoutRoot">
@@ -31,8 +28,11 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock Margin="63,0,62,0" TextWrapping="Wrap" Text="Leaderboard" VerticalAlignment="Top" Height="82" FontSize="48" TextAlignment="Center"/>
-            <ListBox x:Name="leaderboard" HorizontalAlignment="Left" Height="644" Margin="25,82,0,0" VerticalAlignment="Top" Width="403"/>
+            <TextBlock x:Name="score" Margin="122,78,121,0" TextWrapping="Wrap" Text="1" VerticalAlignment="Top" Height="194" FontSize="150" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Margin="44,52,0,0" TextWrapping="Wrap" Text="Your score is:" VerticalAlignment="Top" FontSize="24"/>
+            <TextBlock HorizontalAlignment="Left" Margin="58,333,0,0" TextWrapping="Wrap" Text="Name:" VerticalAlignment="Top" Height="37" Width="67"/>
+            <TextBox x:Name="name" HorizontalAlignment="Left" Height="68" Margin="130,314,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="221" FontSize="20"/>
+            <Button x:Name="submit" Content="Submit" Margin="159,479,159,0" VerticalAlignment="Top" Click="Button_Click"/>
 
         </Grid>
     </Grid>
