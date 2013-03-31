@@ -59,6 +59,8 @@ namespace Find_the_number
                 Random randGen = new Random();
                 number = randGen.Next(1, 11);
                 Card.Source = new BitmapImage(new Uri("/Images/card.png", UriKind.RelativeOrAbsolute));
+                result.Text = "";
+                Tries_bx.Text = "5";
                 Check_btn.Content = "Check";
 
             }
