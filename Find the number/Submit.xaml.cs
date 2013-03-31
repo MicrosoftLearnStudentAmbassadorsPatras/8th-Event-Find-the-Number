@@ -26,6 +26,7 @@ namespace Find_the_number
         {
             if (MessageBoxResult.OK == MessageBox.Show("Your score has been submitted"))
             {
+                App.score = 0;
                 NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
             }
             
