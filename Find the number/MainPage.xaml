@@ -14,7 +14,10 @@
     shell:SystemTray.IsVisible="False">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Images/back.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -25,7 +28,11 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <TextBlock x:Name="Play_btn" Margin="107,543,106,0" TextWrapping="Wrap" Text="Guess!" VerticalAlignment="Top" Height="80" FontSize="36" TextAlignment="Center" Tap="Play_btn_Tap"/>
+            <Grid.Background>
+                <ImageBrush Stretch="Fill"/>
+            </Grid.Background>
+            <TextBlock x:Name="Play_btn" Margin="108,540,105,0" TextWrapping="Wrap" Text="Guess!" VerticalAlignment="Top" Height="80" FontSize="48" TextAlignment="Center" Tap="Play_btn_Tap"/>
+            <TextBlock Margin="152,625,153,0" TextWrapping="Wrap" Text="Leaderboards" VerticalAlignment="Top" Height="46" TextAlignment="Center" FontSize="24" Tap="TextBlock_Tap"/>
         </Grid>
     </Grid>
 

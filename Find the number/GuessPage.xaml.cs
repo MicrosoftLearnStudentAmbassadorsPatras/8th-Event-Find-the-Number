@@ -7,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Navigation;
 using Microsoft.Phone.Controls;
 using Microsoft.Phone.Shell;
+using System.Windows.Media.Imaging;
 
 namespace Find_the_number
 {
@@ -53,128 +54,126 @@ namespace Find_the_number
 
         private void Check_btn_Click(object sender, RoutedEventArgs e)
         {
-            if (Check_btn.Content.ToString() == "Try again")
+            if (Check_btn.Content.ToString() != "Check")
             {
                 NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
             }
-            if (Check_btn.Content.ToString() == "Go for more")
+            else
             {
-                NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
-            }
+                switch (Comparison_bx.Text)
+                {
+                    case "smaller than":
+                        {
+                            if (Int32.Parse(Number_box.Text) > number)
+                            {
+                                Tries_bx.Text = (Int32.Parse(Tries_bx.Text) - 1).ToString();
+                                if (Tries_bx.Text != "0")
+                                {
+                                    result.Text = "YES!";
+                                }
+                                else
+                                {
+                                    result.Text = "Get out of here. You've lost!";
+                                    showCard();
+                                    App.score = 0;
+                                    score.Text = App.score.ToString();
+                                    Check_btn.Content = "Try again";
+                                }
 
-             switch (Comparison_bx.Text)
-            {
-                case "smaller than":
-                    {
-                        if (Int32.Parse(Number_box.Text) > number)
-                        {
-                            Tries_bx.Text = (Int32.Parse(Tries_bx.Text) - 1).ToString();
-                            if (Tries_bx.Text != "0")
-                            {
-                                result.Text = "YES!";
+                                // add winning procedure
                             }
                             else
                             {
-                                result.Text = "Get out of here. You've lost!";
-                                App.score = 0;
-                                score.Text = App.score.ToString();
-                                Tries_bx.Text = "3";
-                                Check_btn.Content = "Try again";
+                                Tries_bx.Text = (Int32.Parse(Tries_bx.Text) - 1).ToString();
+                                if (Tries_bx.Text != "0")
+                                {
+                                    result.Text = "NO!";
+                                }
+                                else
+                                {
+                                    result.Text = "Get out of here. You've lost!";
+                                    showCard();
+                                    App.score = 0;
+                                    score.Text = App.score.ToString();
+                                    Check_btn.Content = "Try again";
+                                }
+                                // add lossing procedure
                             }
-
-                            // add winning procedure
-                        }
-                        else
+                        } break;
+                    case "larger than":
                         {
-                            Tries_bx.Text = (Int32.Parse(Tries_bx.Text) - 1).ToString();
-                            if (Tries_bx.Text != "0")
+                            if (Int32.Parse(Number_box.Text) < number)
                             {
-                                result.Text = "NO!";
+                                Tries_bx.Text = (Int32.Parse(Tries_bx.Text) - 1).ToString();
+                                if (Tries_bx.Text != "0")
+                                {
+                                    result.Text = "YES!";
+                                }
+                                else
+                                {
+                                    result.Text = "Get out of here. You've lost!";
+                                    showCard();
+                                    App.score = 0;
+                                    score.Text = App.score.ToString();
+                                    Check_btn.Content = "Try again"; ;
+                                }
                             }
                             else
                             {
-                                result.Text = "Get out of here. You've lost!";
-                                App.score = 0;
-                                score.Text = App.score.ToString();
-                                Tries_bx.Text = "3";
-                                Check_btn.Content = "Try again";
+                                Tries_bx.Text = (Int32.Parse(Tries_bx.Text) - 1).ToString();
+                                if (Tries_bx.Text != "0")
+                                {
+                                    result.Text = "NO!";
+                                }
+                                else
+                                {
+                                    result.Text = "Get out of here. You've lost!";
+                                    showCard();
+                                    App.score = 0;
+                                    score.Text = App.score.ToString();
+                                    Check_btn.Content = "Try again";
+                                }
                             }
-                            // add lossing procedure
-                        }
-                    } break;
-                case "larger than":
-                    {
-                        if (Int32.Parse(Number_box.Text) < number)
+                        } break;
+                    case "equal to":
                         {
-                            Tries_bx.Text = (Int32.Parse(Tries_bx.Text)-1).ToString();
-                            if (Tries_bx.Text != "0")
+                            if (Number_box.Text == number.ToString())
                             {
-                                result.Text = "YES!";
+                                result.Text = "YES! You win!";
+                                showCard();
+                                Check_btn.Content = "Go for more";
+                                App.score++;
+                                score.Text = App.score.ToString();
+                                Random randGen = new Random();
+                                number = randGen.Next(1, 11);
                             }
                             else
                             {
-                                result.Text = "Get out of here. You've lost!";
-                                App.score = 0;
-                                score.Text = App.score.ToString();
-                                Tries_bx.Text = "3";
-                                Check_btn.Content = "Try again"; ;
+                                Tries_bx.Text = (Int32.Parse(Tries_bx.Text) - 1).ToString();
+                                if (Tries_bx.Text != "0")
+                                {
+                                    result.Text = "NO!";
+                                }
+                                else
+                                {
+                                    result.Text = "Get out of here. You've lost!";
+                                    showCard();
+                                    App.score = 0;
+                                    score.Text = App.score.ToString();
+                                    Check_btn.Content = "Try again";
+                                }
                             }
-                        }
-                        else
-                        {
-                            Tries_bx.Text = (Int32.Parse(Tries_bx.Text) - 1).ToString();
-                            if (Tries_bx.Text != "0")
-                            {
-                                result.Text = "NO!";
-                            }
-                            else
-                            {
-                                result.Text = "Get out of here. You've lost!";
-                                App.score = 0;
-                                score.Text = App.score.ToString();
-                                Tries_bx.Text = "3";
-                                Check_btn.Content = "Try again";
-                            }
-                        }
-                    } break;
-                case "equal to":
-                    {
-                        if (Number_box.Text == number.ToString())
-                        {
-                            result.Text = "YES! You win!";
-                            Check_btn.Content = "Go for more";
-                            Tries_bx.Text = "3";
-                            App.score++;
-                            score.Text = App.score.ToString();
-                            Random randGen = new Random();
-                            number = randGen.Next(1, 11);
-                        }
-                        else
-                        {
-                            Tries_bx.Text = (Int32.Parse(Tries_bx.Text) - 1).ToString();
-                            if (Tries_bx.Text != "0")
-                            {
-                                result.Text = "NO!";
-                            }
-                            else
-                            {
-                                result.Text = "Get out of here. You've lost!";
-                                App.score = 0;
-                                score.Text = App.score.ToString();
-                                Tries_bx.Text = "3";
-                                Check_btn.Content = "Try again";
-                            }
-                        }
-                    } break;
-            }
-
-             
-        
+                        } break;
+                }
+            }     
         }
 
 
 
-        
+        void showCard()
+        {
+            Card.Source = new BitmapImage(new Uri("/Images/" + number + ".png", UriKind.RelativeOrAbsolute));
+        }
 
 
 

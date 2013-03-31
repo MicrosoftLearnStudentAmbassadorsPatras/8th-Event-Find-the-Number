@@ -14,7 +14,10 @@
     shell:SystemTray.IsVisible="False" Loaded="PhoneApplicationPage_Loaded_1">
 
     <!--LayoutRoot is the root grid where all page content is placed-->
-    <Grid x:Name="LayoutRoot" Background="Transparent">
+    <Grid x:Name="LayoutRoot">
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="/Images/back2.jpg"/>
+        </Grid.Background>
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto"/>
             <RowDefinition Height="*"/>
@@ -25,16 +28,16 @@
 
         <!--ContentPanel - place additional content here-->
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
-            <Image Height="395" Margin="92,67,91,0" VerticalAlignment="Top" Source="/Images/card.png" Stretch="Fill"/>
+            <Image x:Name="Card" Height="395" Margin="92,67,91,0" VerticalAlignment="Top" Source="/Images/card.png" Stretch="Fill"/>
             <TextBlock HorizontalAlignment="Left" Margin="55,632,0,0" TextWrapping="Wrap" Text="The number is " VerticalAlignment="Top" Height="40" Width="134"/>
             <TextBlock x:Name="Comparison_bx" HorizontalAlignment="Left" Margin="189,632,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="40" Width="114" Tap="Comparison_bx_Tap" Text="smaller than" FontStyle="Italic"/>
             <TextBox x:Name="Number_box" HorizontalAlignment="Left" Height="67" Margin="303,615,0,0" TextWrapping="Wrap" Text="5" VerticalAlignment="Top" Width="76" FontSize="18" TextAlignment="Center" LostFocus="Number_box_LostFocus" InputScope="Digits"/>
-            <Button x:Name="Check_btn" Content="Check" Margin="125,672,160,0" VerticalAlignment="Top" Height="73" FontSize="22" Click="Check_btn_Click"/>
+            <Button x:Name="Check_btn" Content="Check" Margin="142,672,143,0" VerticalAlignment="Top" Height="73" FontSize="22" Click="Check_btn_Click"/>
             <TextBlock HorizontalAlignment="Left" Margin="376,-4,0,0" TextWrapping="Wrap" Text="Tries:" VerticalAlignment="Top"/>
             <TextBlock x:Name="Tries_bx" HorizontalAlignment="Left" Margin="435,-4,0,0" TextWrapping="Wrap" Text="3" VerticalAlignment="Top"/>
-            <TextBlock x:Name="result" HorizontalAlignment="Left" Margin="10,520,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="76" Width="436" FontSize="36" TextAlignment="Center"/>
-            <TextBlock HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Score:" VerticalAlignment="Top"/>
-            <TextBlock x:Name="score" HorizontalAlignment="Left" Margin="74,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" Height="27" Width="41"/>
+            <TextBlock x:Name="result" HorizontalAlignment="Left" Margin="10,492,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="123" Width="436" FontSize="36" TextAlignment="Center"/>
+            <TextBlock HorizontalAlignment="Left" Margin="10,0,0,0" TextWrapping="Wrap" Text="Score:" VerticalAlignment="Top"/>
+            <TextBlock x:Name="score" HorizontalAlignment="Left" Margin="78,0,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Text="0" Height="27" Width="41"/>
 
         </Grid>
     </Grid>

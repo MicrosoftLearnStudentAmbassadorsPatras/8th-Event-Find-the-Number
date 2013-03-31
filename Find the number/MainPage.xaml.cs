@@ -26,5 +26,10 @@ namespace Find_the_number
             NavigationService.Navigate(new Uri("/GuessPage.xaml", UriKind.Relative));
             
         }
+
+        private void TextBlock_Tap(object sender, GestureEventArgs e)
+        {
+            NavigationService.Navigate(new Uri("/Leaderboard.xaml", UriKind.Relative));
+        }
     }
 }
