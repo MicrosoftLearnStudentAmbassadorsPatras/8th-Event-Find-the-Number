@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Find the number", "Find the number\Find the number.csproj", "{CBCED8A8-7A80-472D-92E3-ABAF428EA57D}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6894CA2B-3E68-4369-BDAC-83AC42D86CC3} = {6894CA2B-3E68-4369-BDAC-83AC42D86CC3}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScoreService", "ScoreService\ScoreService.csproj", "{6894CA2B-3E68-4369-BDAC-83AC42D86CC3}"
 EndProject

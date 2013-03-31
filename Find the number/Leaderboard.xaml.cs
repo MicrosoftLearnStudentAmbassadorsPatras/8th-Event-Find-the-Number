@@ -19,7 +19,7 @@ namespace Find_the_number
 
         private void PhoneApplicationPage_Loaded(object sender, RoutedEventArgs e)
         {
-            // refresh leaderboard
+            MessageBox.Show("test");
         }
     }
 }

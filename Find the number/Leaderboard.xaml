@@ -33,7 +33,6 @@
         <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
             <TextBlock Margin="63,0,62,0" TextWrapping="Wrap" Text="Leaderboard" VerticalAlignment="Top" Height="82" FontSize="48" TextAlignment="Center"/>
             <ListBox x:Name="leaderboard" HorizontalAlignment="Left" Height="644" Margin="25,82,0,0" VerticalAlignment="Top" Width="403"/>
-
         </Grid>
     </Grid>
 

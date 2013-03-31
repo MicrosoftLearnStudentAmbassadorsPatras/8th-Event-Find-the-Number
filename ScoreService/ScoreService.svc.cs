@@ -38,7 +38,7 @@ namespace ScoreService
             return success;
         }
 
-        //Function for debugging purposes, do not show in the demo
+        //For debugging purposes only, do not include in demo
         public bool ResetScores()
         {
             connection.Open();
