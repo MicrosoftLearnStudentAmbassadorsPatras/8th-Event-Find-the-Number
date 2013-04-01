@@ -16,7 +16,7 @@ namespace ScoreService
         {
             List<ScoreEntry> scores = new List<ScoreEntry>();
             connection.Open();
-            SqlCommand cmd = new SqlCommand("SELECT Name,Score FROM Scoreboard ORDER BY Score DESC", connection);
+            SqlCommand cmd = new SqlCommand("SELECT TOP 10 Name,Score FROM Scoreboard ORDER BY Score DESC", connection);
             SqlDataReader reader = cmd.ExecuteReader();
             while (reader.Read())
             {

@@ -27,18 +27,19 @@ namespace Find_the_number
         {
             ScoreServiceClient client = new ScoreServiceClient();
             client.AddScoreCompleted += client_AddScoreCompleted;
-            client.AddScoreAsync(name.Text, App.score);
-
-            //Should not be needed anymore
-            //if (MessageBoxResult.OK == MessageBox.Show("Your score has been submitted"))
-            //{
-            //    App.score = 0;
-            //    NavigationService.Navigate(new Uri("/MainPage.xaml", UriKind.Relative));
-            //}
+            client.AddScoreAsync(name.Text, App.score);          
         }
 
         private void client_AddScoreCompleted(object sender, AddScoreCompletedEventArgs e)
         {
+            if (e.Cancelled || e.Error != null || !e.Result)
+            {
+                MessageBox.Show("An error occured while submitting your score. Please try again.");
+            }
+            else
+            {
+                MessageBox.Show("Score submitted successfully.");
+            }
             App.score = 0;
             NavigationService.Navigate(new Uri("/Leaderboard.xaml", UriKind.Relative));
         }
